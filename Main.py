@@ -1,14 +1,16 @@
 #! /usr/bin/env python3
 import os
 import sys
+import warnings
 from xml.dom import minidom
 
+import click
 import matplotlib.pyplot as plt
 import numpy as np
+from PIL import Image, ImageDraw, ImageFilter
 from pyfld import FastLineDetector
-from PIL import Image, ImageFilter, ImageDraw
-import click
 
+warnings.filterwarnings("ignore")
 WIDTH = 100
 HEIGHT = 100
 
@@ -50,7 +52,6 @@ def draw_over_img(img: Image.Image, x1: np.ndarray, x2: np.ndarray, y1: np.ndarr
 @click.option("--canny-th2", type=float, help="upper threshold in canny alg: https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html", default=150)
 @click.option("--aperture-size", type=int, help="size of kernel in canny alg", default=3)
 def make_map(file_path: str, make_img: bool, length_threshold: int, distance_threshold: float, canny_th1: float, canny_th2: float, aperture_size: int):
-    print(file_path, length_threshold)
     fname = file_path.split(".")[-2].split(os.sep)[-1]
     xml_fname = fname + ".xml"
 
