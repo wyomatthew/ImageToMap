@@ -84,14 +84,3 @@ def make_map(file_path: str, make_img: bool, length_threshold: int, distance_thr
 
 if __name__ == "__main__":
     make_map()
-    exit(0)
-
-    fig, ax = plt.subplots()
-    ax.imshow(arr, cmap="gray")
-    ax.plot([x1, x2], [y1, y2], c="r")
-    fig.savefig(out_fname)
-
-    fig, ax = plt.subplots()
-    ax.imshow(np.zeros(arr.shape), cmap="gray")
-    ax.plot([x1, x2], [y1, y2], c="r")
-    fig.savefig("blank_" + out_fname)
