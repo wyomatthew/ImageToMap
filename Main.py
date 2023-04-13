@@ -9,13 +9,6 @@ from pyfld import FastLineDetector
 from PIL import Image, ImageFilter, ImageDraw
 import click
 
-BORDER_SIZE = 3
-IMAGE_SIZE = (100, 100)
-MIN_V = 0.01 * 255
-THRESHOLD1 = 150
-THRESHOLD2 = 250
-THRESHOLD3 = 90
-APERTURE_SIZE = 3
 WIDTH = 100
 HEIGHT = 100
 
